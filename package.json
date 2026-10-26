@@ -1,0 +1,18 @@
+{
+  "name": "clases-de-node-prog-iv",
+  "version": "1.0.0",
+  "description": "Módulo 1: Fundamentos de JavaScript para Backend. 4. Gestión de Módulos (ES Modules) Un proyecto de backend no puede existir en un solo archivo. Node.js permite dividir el código en múltiples archivos llamados módulos. El estándar moderno de JavaScript es ES Modules (ESM). Para habilitarlos, el archivo package.json debe contener la propiedad: type: module.",
+  "homepage": "https://github.com/ProogIV/Clases-de-Node-Prog-IV#readme",
+  "bugs": {
+    "url": "https://github.com/ProogIV/Clases-de-Node-Prog-IV/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProogIV/Clases-de-Node-Prog-IV.git"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
