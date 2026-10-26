@@ -1,8 +1,20 @@
-// Importamos utilizando desestructuración (llaves).
-import { ejecutarLogs, Sistema } from './logger.js';
+// Extendemos la clase nativa Error.
+class DatabaseError extends Error {
+	constructor(mensaje, consultaSQL) {
+		super(mensaje);
+		this.name = "DatabaseError";
+		this.consultaSQL = consultaSQL; // Propiedad personalizada.
+	}
+}
 
-// Los console.log dentro de 'ejecutarLogs' solo aparecen al invocarla.
-ejecutarLogs();
-
-const miSistema = new Sistema();
-miSistema.iniciar();
+// Bloque de control de errores.
+try {
+	throw new Database("Fallo de conexión", "SELECT * FROM usuarios");
+} catch(error) {
+	if(error instanceof DatabaseError) {
+		console.error(`[${error.name}]: ${error.message}`);
+		console.error(`Query que falló: ${error.consultaSQL}`);
+	} else {
+		console.error("Error crítico desconocido", error);
+	}
+}
